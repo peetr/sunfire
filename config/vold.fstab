@@ -22,10 +22,10 @@
 ## <sysfs_path> - List of sysfs paths to source devices
 ######################
 
-# external Sdcard
-dev_mount emmc /mnt/emmc auto /devices/platform/tegra-sdhci.2/mmc_host/mmc3 /devices/platform/tegra-sdhci.2/mmc_host/mmc1
+# external eMMC
+dev_mount emmc /mnt/emmc auto /devices/platform/tegra-sdhci.2/mmc_host/mmc3
 
-# internal emmc storage
+# internal sdcard
 dev_mount sdcard /mnt/sdcard 18 /devices/platform/tegra-sdhci.3/mmc_host/mmc0
 
 # flash drive connection to USB1

@@ -50,6 +50,10 @@ PRODUCT_COPY_FILES += \
     device/moto/sunfire/config/sysctl.conf:system/etc/sysctl.conf \
     device/moto/sunfire/config/init.d/01sysctl:system/etc/init.d/01sysctl
 
+# media profiles
+PRODUCT_COPY_FILES += \
+    device/moto/sunfire/media_profiles.xml:system/etc/media_profiles.xml
+
 ## (3)  Finally, the least specific parts, i.e. the non-GSM-specific aspects
 
 # Set en_US as default locale
