@@ -24,6 +24,7 @@ $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
 ## (1) First, the most specific values, i.e. the aspects that are specific to GSM
 PRODUCT_COPY_FILES += \
+    device/moto/sunfire/init.rc:root/init.rc \
     device/moto/sunfire/init.sunfire.rc:root/init.sunfire.rc \
     device/moto/sunfire/init.sunfire.usb.rc:root/init.sunfire.usb.rc \
     device/moto/sunfire/ueventd.sunfire.rc:root/ueventd.sunfire.rc
@@ -33,9 +34,8 @@ $(call inherit-product-if-exists, vendor/moto/sunfire/sunfire-vendor.mk)
 
 ## (3)  Finally, the least specific parts, i.e. the non-GSM-specific aspects
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.telephony.sms_segment_size=160 \
     ro.telephony.call_ring.multiple=false \
-    ro.setupwizard.enable_bypass=1 \
+    ro.setupwizard.enterprise_mode=1 \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
     ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html \
 
@@ -63,7 +63,7 @@ PRODUCT_LOCALES := en_US
 PRODUCT_LOCALES += hdpi
 
 # better code for dalvik heap size since we have space
-$(call inherit-product, frameworks/base/build/phone-xhdpi-1024-dalvik-heap.mk)
+$(call inherit-product, frameworks/base/build/phone-hdpi-512-dalvik-heap.mk)
 
 # copy all kernel modules under the "modules" directory to system/lib/modules
 PRODUCT_COPY_FILES += $(shell \
